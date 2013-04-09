@@ -1,69 +1,70 @@
 class Admin::ProvincesController < ApplicationController
+ 
   layout "admin"
   
   # GET /admin/provinces
   def index
-    @provinces = Province.all
+    @admin_provinces = Province.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @provinces }
+      format.json { render json: @admin_provinces }
     end
   end
 
   # GET /admin/provinces/1
   # GET /admin/provinces/1.json
   def show
-    @province = Province.find(params[:id])
+    @admin_province = Province.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @province }
+      format.json { render json: @admin_province }
     end
   end
 
   # GET /admin/provinces/new
   # GET /admin/provinces/new.json
   def new
-    @province = Province.new
+    @admin_province = Province.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @province }
+      format.json { render json: @admin_province }
     end
   end
 
   # GET /admin/provinces/1/edit
   def edit
-    @province = Province.find(params[:id])
+    @admin_province = Province.find(params[:id])
   end
 
 
   def create
-    @province = Province.new(params[:province])
+    @admin_province = Province.new(params[:province])
 
     respond_to do |format|
-      if @province.save
-        format.html { redirect_to @province, notice: 'Province was successfully created.' }
-        format.json { render json: @province, status: :created, location: @province }
+      if @admin_province.save
+        format.html { redirect_to admin_province_path(@admin_province), notice: 'Province was successfully created.' }
+        format.json { render json: @admin_province, status: :created, location: @admin_province }
       else
         format.html { render action: "new" }
-        format.json { render json: @province.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_province.errors, status: :unprocessable_entity }
       end
     end
   end
 
 
   def update
-    @province = Province.find(params[:id])
+    @admin_province = Province.find(params[:id])
 
     respond_to do |format|
-      if @province.update_attributes(params[:province])
-        format.html { redirect_to @province, notice: 'Province was successfully updated.' }
+      if @admin_province.update_attributes(params[:province])
+        format.html { redirect_to admin_province_path(@admin_province), notice: 'Province was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @province.errors, status: :unprocessable_entity }
+        format.json { render json: @admin_province.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,7 +75,7 @@ class Admin::ProvincesController < ApplicationController
     @province.destroy
 
     respond_to do |format|
-      format.html { redirect_to provinces_url }
+      format.html { redirect_to admin_provinces_url }
       format.json { head :no_content }
     end
   end  

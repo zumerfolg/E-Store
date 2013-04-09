@@ -1,10 +1,10 @@
-<%= form_for(@province) do |f| %>
-  <% if @province.errors.any? %>
+<%= form_for [:admin, @admin_province] do |f| %>
+  <% if @admin_province.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@province.errors.count, "error") %> prohibited this province from being saved:</h2>
+      <h2><%= pluralize(@admin_province.errors.count, "error") %> prohibited this province from being saved:</h2>
 
       <ul>
-      <% @province.errors.full_messages.each do |msg| %>
+      <% @admin_province.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
