@@ -1,7 +1,5 @@
 Robovacuum::Application.routes.draw do
   
-  resources :customers
-
 
   root :to => "products#index"
   
@@ -12,12 +10,15 @@ Robovacuum::Application.routes.draw do
   match "add_cart" => "products#add_cart", :via => :post, :as => "add_cart"
   match "empty_cart" => "products#empty_cart", :via => :get, :as => "empty_cart"
   
-  resources :products
   
+  
+  resources :products
+  resources :customers
+
   
   get "admin" => "admin/products#index"
   namespace :admin do 
-    resources :products, :users, :provinces
+    resources :products, :provinces, :customers
   end
 
   # The priority is based upon order of creation:
