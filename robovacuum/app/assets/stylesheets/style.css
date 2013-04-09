@@ -1,0 +1,673 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/***********************************************************************/
+/*                        Common Part                                  */
+/***********************************************************************/
+a:link, a:visited {
+	text-decoration :none;
+}
+
+ul {
+	list-style:none;
+}
+
+li {
+	display:inline;
+}
+
+.clear {
+   clear: both;	
+}
+
+body {
+	margin:0px;
+	padding:0px;
+	font-family: 'Times New Roman',Times,Serif;
+}
+
+section#container{
+	width: 1037px;
+	margin: 20px auto;
+	border:1px solid #C0C0C0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 1px #C0C0C0, -1px -1px 1px #C0C0C0;
+	box-shadow: 1px 1px 1px #C0C0C0, -1px -1px 1px #C0C0C0;
+}
+
+
+section#image_main {
+    background:url('/assets/main_image.jpg') no-repeat; 
+	width: 1017px;
+	height: 150px;
+	margin: 10px;
+}
+
+canvas#logo {
+	width: 200px;
+	height:150px;
+	z-index: 1;
+	background:transparent;
+}
+
+h5 {
+	position:relative;
+	top: 100px;
+	left: 700px;
+	color:#fff;
+	font-size: 15px;
+	font-style:italic;
+	font-family:Verdana;
+	text-shadow: 2px 2px 4px #000;
+}
+
+aside#shoppingcart {
+	float: left;
+	width: 170px;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px 5px 5px 5px;
+	padding: 5px;
+	margin-left: 10px;
+}
+
+aside#shoppingcart div.block-title{
+	padding: 5px;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+aside#shoppingcart div.block-title strong{
+	background: url('/assets/basket_bg_top.png') no-repeat scroll left center transparent;
+	padding: 3px 30px;
+}
+
+aside#shoppingcart div.block-title div#delcart {
+	float: right;
+	margin-top: -5px;
+}
+
+aside#shoppingcart div.block-title div#delcart img {
+	width : 17px;
+	height: 17px;
+}
+
+aside#shoppingcart div#block-content p.info {
+	margin: 0;
+	padding: 5px 9px;
+	font-size: 12px;
+}
+
+
+#navigation {
+	float: left;
+	width: 820px;
+	height: 50px;
+	margin: 0px 10px 0px 10px;
+}
+
+
+nav {
+	width: 100%;
+	margin: 0px auto;
+}
+
+
+nav > ul {
+	list-style: none;
+	margin: 0px 0px 0px 10px;
+	padding: 0px;
+}
+
+nav > ul li {
+	float:left;
+}
+
+nav > ul li a:link, nav > ul li a:visited {
+	display:block;
+	width: 120px;
+	color: #fff;
+	background:#006993;
+	text-decoration:none;
+	text-align:center;
+	text-transform: uppercase;
+	text-shadow:2px 2px 4px #000;
+	margin-left: 35px;
+	padding: 8px;
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	box-shadow: 5px 5px 5px #888;
+	-webkit-box-shadow: 5px 5px 5px #888;
+}
+
+nav > ul li a:hover, nav > ul li a:active, nav > ul li a:focus {
+	color:#EBDDE2;
+	background: #4682B4;
+}
+
+#search {
+	float: left;
+	height: 20px;
+	width: 530px;
+	margin: 8px 20px 20px 50px;
+	
+}
+
+#search form {
+	height: 20px;
+	width: 340px;
+        margin-left: 160px;
+	
+}
+
+#search form div {
+	float: left;
+}
+
+
+#search form div input[type="text"] {
+	height: 18px;
+}
+
+#search form div input[type="image"] {
+	margin-top: 1px;
+	margin-left: 7px;
+	height: 23px;
+	width: 25px;
+}
+
+
+#sign  {
+    float: left;
+    height: 17px;
+    width: 170px;
+    margin: 10px 20px;
+}
+
+#sign ul {
+    color: #908F8F;
+    float: right;
+    height: 20px;
+    margin: 0;
+    padding: 0;	
+}
+
+#sign ul li {
+    color: #1DB2F7;
+    display: inline-block;
+    height: 17px;
+    font-size: 14px;
+    line-height: 14px;
+    padding-right: 10px;
+    margin-right: 5px;	
+}
+
+
+#sign ul li:first-child {
+	border-right: 2px solid #AEAEAE;
+}
+
+#sign ul li a:link, a:hover, a:visited {
+	background-color: #FFF;
+	color: #085EB9;
+	text-decoration: none;
+}
+
+
+
+aside#news{
+	width: 250px;
+	height: 500px;
+	margin: 20px 0px 10px 10px;
+	border:solid 1px #dedede;
+	border-radius: 5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	float: left;
+	text-align: left;	
+}
+
+aside#news > h1 {
+	color: #2C85CE;
+	font-size: 29px;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 100%;
+	margin: 10px 0px 0px 10px;
+}
+
+aside#news > p {
+	color:#242C2E;
+	font-size: 14px;
+	line-height: 150%;
+	margin: 0px 10px;
+}
+
+aside#news > h3 {
+    color: #55686D;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 30px 0px 10px 10px;
+    text-align: left;
+}
+
+aside#news hr {
+	color:#dedede;
+	background-color:#dedede;
+	height:1px;
+	border:none;
+}
+
+
+section#content {
+	width: 757px;
+	min-height: 600px;
+	margin: 0px 0px 10px;
+	float: left;
+}
+
+section#content:after {
+	content:""; 
+	display:block; 
+	clear:both;
+}
+
+
+footer {
+	font-size:15px;
+	margin: 30px 10px 20px;
+	text-align:center;
+}
+
+footer section#bottom_navi ul li{
+	padding: 0px 5px 0px 10px;
+	border-left:1px solid #000;
+}
+
+footer section#bottom_navi ul li:first-child {
+	border-left:none;
+}
+
+footer section#copyright {
+	margin:5px 0px;
+}
+
+span.strong {
+	font-weight: bold;
+	font-style: italic;	
+}
+
+section#container:after {
+	content:""; 
+	display:block; 
+	clear:both;
+}
+
+/***********************************************************************/
+/*                        Home Part                                  */
+/***********************************************************************/
+
+
+section#content p.ads {
+	border-bottom: 3px solid #dedede;
+	border-top: 3px solid #dedede;
+	font-family: 'Times New Roman',Times,Serif;
+	color: #B1AC91;
+	float: left;
+	text-shadow: 1px 1px 0.5px #000;
+	font-size: 20px;    
+	font-style: italic;
+	letter-spacing: 1px;
+	line-height: 33px;
+	min-height: 102px;
+	padding: 22px 0;
+	text-align: center;
+	width: 210px;    
+	margin: 20px 20px 20px;
+    
+}
+
+section#content img.home {
+	display: block;
+	float: left;
+	padding: 0 15px;
+	width: 210px;
+	height: 200px;
+	margin-top: 25px;
+}
+
+section#content > h4 {
+	position: relative;
+	top : -40px;
+	left: 330px;
+	color:#C0C0C0;
+	font-style: italic;
+	text-shadow: 1px 0.5px 0.5px #000;
+	width:100px;
+	height:30px;
+}
+
+section#content > h2{
+	font-size: 2em;
+	line-height: 1;
+	font-style: normal;
+	font-weight: normal;
+	margin: 0px 10px 10px 15px;
+	border-bottom: 3px solid #666666;
+}
+
+section#content > p{
+	color:#242C2E;
+	font-size: 17px;
+	line-height: 150%;
+	margin: 5px 15px 30px;
+}
+
+div.space{
+	width: 757px;
+	height: 30px;
+}
+
+
+/***********************************************************************/
+/*                        Product Part                                  */
+/***********************************************************************/
+
+section#content div.product {
+	float: left;
+	margin: 20px 5px 10px 10px;
+	width: 200px;
+}
+
+section#content div.product img{
+	width:180px;
+	height: 180px;
+	
+}
+
+section#content div.summary {
+	float: left;
+	width: 340px;
+	margin: 20px 5px 10px 10px;
+}
+
+section#content div.summary a:visited, a:hover, a:link{
+	background-color: #FFF;
+	color: #085EB9;
+}
+
+section#content div.summary h3 {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.2;
+	margin-bottom: 12px;
+}
+
+section#content div.summary h4 {
+	margin-bottom: 12px;  	
+}
+
+section#content div.summary h4 span.normal{
+	font-weight: normal;  	
+}
+
+section#content div.summary p {
+	font-size: 12px;
+	line-height: 1.2;
+}
+
+
+section#content div.cartBox {
+	float: right;
+	padding: 5px 15px;
+	width: 150px;
+	height: 160px;
+	margin-top: 20px;
+	background: url("/assets/list-bg.gif") repeat-y scroll right top transparent
+}
+
+section#content div.cartBox div.price {
+	color: #AE1231;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 7px 0px 15px;   
+}
+
+section#content div.cartBox ul {
+	margin: 8px 0 10px 15px;	
+}
+
+
+section#content div.cartBox li {
+	font-size: 11px;
+	color: #737474;
+}
+
+section#content div.cartBox div.cart {
+	background: url('/assets/btn_add_to_cart.gif') no-repeat;
+	margin-bottom: 20px;
+}
+
+section#content div.cartBox div form {
+	width: 135px;
+	height: 35px;
+}
+
+
+section#content div.clear {
+	clear: both;
+}
+
+section#content div.hr {
+	border-bottom: 1px solid #E7E7E7;
+	height: 1px;
+	margin: 5px 10px;
+	width: 750px;
+
+}
+
+
+/***********************************************************************/
+/*                        product Detail Part                          */
+/***********************************************************************/
+section#content div#overview {
+    float: left;
+    margin: 7px 0 26px;	
+}
+
+section#content div#overview div.backimage{
+    margin: 0 20px 0 0;
+    width: 300px;
+    height: 300px;	
+}
+
+section#content div#overview img{
+    width: 300px;
+    height: 300px;	
+}
+
+section#content div#info {
+    float: left;
+    width : 700px;
+}
+
+section#content div#info {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+/***********************************************************************/
+/*                        About Us Part                                */
+/***********************************************************************/
+
+section#content section#about {
+	width: 747px;
+	height: 200px;
+	margin: 20px 0px 10px 10px;
+	background:#fff;
+	background-image:url("/assets/samsung_vacuum.jpg");
+	background-size:250px 200px;
+	background-position: 400px 0px;
+	background-repeat: no-repeat;
+	border:solid 1px #dedede;
+	border-radius: 5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;	
+}
+
+section#content section#about h1 {
+	position: relative;
+	font-weight: normal;
+	font-size: 24px;
+}
+
+section#content section#about h1#first {
+	top: 60px;
+	left:40px;
+}
+
+section#content section#about h1#second {
+	top: 70px;
+	left:40px;
+}
+
+section#content > h1 {
+	font-size: 2em;
+    line-height: 1;
+    font-style: normal;
+    font-weight: normal;
+    margin: 30px 10px 0px 15px;
+    padding: 5px 0 5px;
+    border-bottom: 3px solid #666666;
+}
+
+
+section#content ul {
+	color: #242C2E;
+    font-size: 15px;
+    line-height: 150%;
+    margin: 5px 15px 20px;
+    list-style-position:inside;
+    list-style-type:disc;
+}
+
+section#content ul  li {
+	display:list-item;
+}
+
+section#content div#map {
+	width: 600px;
+	margin-left: 15px;
+	margin-bottom: 30px;
+}
+
+section#content div#map iframe {
+    width: 600px;
+    height:350px;
+    border: none;
+}
+
+
+section#content div#map a {
+	color:#0000FF;
+	text-align:left
+}
+
+/***********************************************************************/
+/*                        Contact Part                                 */
+/***********************************************************************/
+
+section#content form#contact{
+	float:left;
+	width: 727px;
+	padding: 10px 20px 20px 20px;
+}
+
+section#content form#contact > fieldset {
+	border:none;
+}
+
+section#content form#contact > fieldset#first {
+	float: left;
+	width: 250px; 
+
+}
+
+section#content form#contact > fieldset#second {
+	float: right;
+	width: 425px;
+}
+
+
+section#content form#contact > fieldset#buttons  {
+	clear:both;
+	text-align:right;
+	margin-right: 20px;
+}
+
+section#content form#contact label {	
+	font-size: 18px;
+	color: #666; 
+}
+
+section#content form#contact input, section#content form#contact textarea {
+	padding:8px;
+	margin: 4px 0 20px 0;
+	width: 220px;
+	font-size: 14px;
+	color: #555; 
+	border: 1px solid #ddd;
+	box-shadow: 0px 0px 4px #aaa;
+	-webkit-box-shadow:0px 0px 4px #aaa;
+	-moz-box-shadow:0px 0px 4px #aaa; 
+} 
+
+section#content form#contact textarea {		
+	width: 390px; 
+	height: 175px; 		 		
+}
+
+section#content form#contact input:focus, section#content form#contact textarea:focus { 
+	background: #eee; 
+}
+
+section#content form#contact input[type='submit'], section#content form#contact input[type='reset']{ 	
+	width: 100px;
+	color: #fff; 
+	font: 14px Georgia, "Times New Roman", Times, serif;
+	font-weight:bold;
+	text-transform: uppercase; 
+	margin-top: 5px;
+	padding: 7px 15px;
+	margin-left: 10px;
+	background: #4C787E;
+	border: none;
+	border-radius:4px;
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;	
+}
+
+section#content form#contact input[type='submit']:hover, section#content form#contact input[type='reset']:hover{ 	
+	cursor: pointer;
+	background: #3EA99F;
+	
+}
+
+
+section#content form#contact div.error
+{
+	color: red;
+	font-style: italic;
+	font-weight: bold;
+	padding: 5px 0;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+
+

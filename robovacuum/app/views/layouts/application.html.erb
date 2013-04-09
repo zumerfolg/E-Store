@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Robot Vacuum</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+  <section id="container">		
+          <section id="image_main">
+                  <h5>Explore coolest robot vacuums</h5>
+                  <canvas id="logo">
+                          Upgrade your browser!
+                  </canvas>
+          </section>
+          
+           <aside id="shoppingcart">
+            <div class="block-title">
+              <strong><span>Shopping Cart</span></strong>
+              <div id="delcart"><%=link_to(image_tag("delete.png"), empty_cart_path, :remote => true)%></div>
+            </div>
+            <div id="block-content">
+              <p class="info">You have <strong id="item"><%= @my_cart.size.zero? ? 'no items' : pluralize(@my_cart.size, 'item')%></strong> in your shopping cart.</p>
+            </div>
+          </aside>
+ 
+          <div id="navigation">
+                  <nav>
+                          <ul>
+                                  <li><%=link_to "Home", home_path %></li>
+                                  <li><%=link_to "Products", products_path %></li>
+                                  <li><%=link_to "About Us", about_path %></li>
+                                  <li><%=link_to "Contact", contact_path %></li>
+                          </ul>
+                  </nav>
+          </div>
+          
+          <div id="search">
+            <%=form_tag(search_path, :method => :post) do %>
+            <div><%= text_field_tag(:keywords, "", :size => 40, :placeholder => "Search by name or description" ) %></div>
+            <div><%=image_submit_tag("search.jpg", :alt => "search")%></div>
+            <% end %>
+          </div>
+        
+          <div id="sign">
+            <ul>
+              <li><a href="#">Log In</a></li>
+              <li><a href="#">Register</a></li>
+            </ul>
+          </div>      
+          
+          <div class="clear"></div>
+          
+          <aside id="news">
+                  <h1>News</h1>
+                  <h3>March 10, 2013</h3>
+                  <hr>
+                  <p>
+                          Robo Tap Expands Global Sales And Marketing Leadership With Two Senior Executive Appointments
+                  </p>
+                  <h3>July 2, 2012</h3>
+                  <hr>
+                  <p>
+                          Smart Tango Is Fully Loaded, But It Won't Do All Your Dirty Work
+                  </p>			
+                  <h3>April 10, 2012</h3>
+                  <hr>
+                  <p>
+                          Latest Smart Tango automatic vacuum cleaner features improved ability to pick up pet hair and dirt 
+                          and reduce allergens on all floor types for cleaner, healthier homes
+                  </p>			
+          </aside>
+          
+          <section id="content">
+             <%= yield %>
+          </section>
+
+          <footer>
+                  <section id="bottom_navi">
+                          <ul>
+                                  <li><a href="#">Home</a></li>
+                                  <li><a href="#">Products</a></li>
+                                  <li><a href="#">About Us</a></li>
+                                  <li><a href="#">Contact</a></li>
+                          </ul>
+                  </section>
+                  <section id="copyright">
+                          <p>Copyright &copy; 2013 <span class="blue">Robotics Vacuum Company</span></p>
+                  </section>    
+          </footer>
+  </section>
+
+
+</body>
+</html>

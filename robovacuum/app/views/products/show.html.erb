@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div id="overview">
+  <div class="backimage">
+     <%=image_tag @product.image %>
+  </div>
+</div>
+
+
+
+<h1><%= @product.name %></h1>
+<p><span class="normal">Model Number:</span>&nbsp;<%= @product.model_number %></p>
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @product.price %>
+</p>
+
+<p>
+  <b>Stock quantity:</b>
+  <%= @product.stock_quantity %>
+</p> 
+
+
+<div class="clear"></div>
+
+
+
+<%= link_to 'Back', products_path %>

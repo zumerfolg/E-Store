@@ -1,0 +1,40 @@
+      <h1>We're available 24/7</h1>
+      <p>
+              If you want to know more about our products, feel free to contact us. We are ready to answer any questions 
+              you might have and how it works.
+      </p>
+      <p>
+              <span class="strong">We can be reached at:</span><br/>
+              123 St. Anne's RD <br/>
+              Winnipeg MB, Canada R2N 0A2<br/>				
+              1-800-222-1234 <br/>
+              1-800-222-3456 (outside Canada)
+      </p>
+      <h1>Contact Us</h1>
+      <form id="contact" enctype="text/plain" method="post" action="mailto:hchoi34@academic.rrc.ca">
+              <fieldset id="first">
+                      <label for="name">Name:</label>
+                      <input type="text" id="name" name="name"  placeholder="First and Last Name" autofocus="autofocus" />
+                      <div class="error" id="name_error">* Please enter your name.</div>
+                      
+                      <label for="phone">Phone Number:</label>
+                      <input type="tel" id="phone" name="phone" />
+                      <div class="error" id="phone_error">* Please enter a phone number.</div>
+                      <div class="error" id="phone_format_error">* Please enter a valid phone number.</div>
+
+                      <label for="email">Email:</label>
+                      <input type="text" id="email" name="email" placeholder="example@domain.com" />
+                      <div class="error" id="email_error">* Please enter an email.</div>
+                      <div class="error" id="email_format_error">* Please enter a valid email.</div>
+              </fieldset>
+
+              <fieldset id="second">
+                      <label for="message">Comment:</label>
+              <textarea id="message" name="message" rows="20" cols="10">
+              </textarea>
+              </fieldset>
+              <fieldset id="buttons">
+                      <input type="submit" value="Submit"  />
+                      <input type="reset"  value="Reset"  />
+              </fieldset>				
+      </form>

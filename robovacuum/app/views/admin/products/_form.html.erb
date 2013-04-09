@@ -1,0 +1,48 @@
+<%= form_for [:admin, @admin_product], :html => {:class => 'form-vertical' } do |f| %>
+  <% if @admin_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_product.errors.count, "error") %> prohibited this admin_product from being saved:</h2>
+
+      <ul>
+      <% @admin_product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br/>
+  <%= image_tag @admin_product.image if @admin_product.image.present? %><br/><br/>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+     <%= f.text_field :name %><br />
+  </div>
+  
+  <div class="field">
+    <%= f.label :description %><br />
+     <%= f.text_area :description %><br />
+  </div>
+  
+  <div class="field">
+    <%= f.label :price %><br />
+     <%= f.text_field :price %><br />
+  </div>  
+  
+  <div class="field">
+    <%= f.label :stock_quantity %><br />
+     <%= f.text_field :stock_quantity %><br />
+  </div>
+  
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </div>  
+
+   <div class="field">
+    <%= f.label :model_number %><br />
+     <%= f.text_field :model_number %><br />
+  </div>   
+  
+  <%= f.button :submit %>
+<% end %>

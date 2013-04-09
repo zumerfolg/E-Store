@@ -1,0 +1,41 @@
+<% if notice %>
+  <p id="notice" class="alert alert-success"><%= notice %></p>
+<% end %>
+
+<h2>Product details</h2>
+<br/>
+
+<p>
+  <%= image_tag @admin_product.image %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @admin_product.name %>
+</p>
+
+
+<p>
+  <b>Description:</b>
+  <%= @admin_product.description %>
+</p>
+
+<p>
+  <b>Stock Qty:</b>
+  <%= @admin_product.stock_quantity %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @admin_product.price %>
+</p>
+
+
+<p>
+  <b>Model Number:</b>
+  <%= @admin_product.model_number %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_product_path(@admin_product) %> |
+<%= link_to 'Back', admin_products_path %>

@@ -1,0 +1,38 @@
+<h3>Listing Products</h3>
+
+
+<table class="table table-striped">
+ <thead>
+   <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>      
+      <th>Stock Qty</th>
+      <th>Model Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_products.each do |admin_product| %>
+      <tr>
+        <td><%= admin_product.name %></td>
+        <td><%= truncate(admin_product.description, length: 40, omission: "...") %></td>
+        <td><%= admin_product.price %></td>
+        <td><%= admin_product.stock_quantity %></td>
+        <td><%= admin_product.model_number %></td>
+        <td>
+          <%= link_to 'Show', admin_product_path(admin_product), class: "btn-small btn-info" %>
+          <%= link_to 'Edit', edit_admin_product_path(admin_product), class: "btn-small btn-primary" %>
+          <%= link_to 'Destroy', admin_product_path(admin_product), class: "btn-small btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<center>
+
+</center>
+
+<br />
+
+<%= link_to 'New Product', new_admin_product_path, class: "btn" %>
