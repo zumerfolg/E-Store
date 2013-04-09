@@ -1,5 +1,8 @@
 Robovacuum::Application.routes.draw do
   
+  resources :customers
+
+
   root :to => "products#index"
   
   match "home" => "products#home", :via => :get, :as => "home"
