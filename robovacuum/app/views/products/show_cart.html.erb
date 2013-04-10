@@ -19,8 +19,16 @@
         <td colspan="6">
           <div class="cart_shipping">
             <dl>
-              <dd>SubTotal:</dd>
+              <dt>SubTotal:</dt>
               <dd>44002</dd>
+            </dl>
+            <dl>
+              <dt>Tax:</dt>
+              <dd>3232</dd>
+            </dl>
+            <dl>
+              <dt>Estimated Total:</dt>
+              <dd id="estTotal">8034830</dd>
             </dl>
           </div>
         </td>
@@ -29,20 +37,25 @@
     <tbody>
       <% @my_cart.each do |product|%>
       <tr>
-        <td><%=link_to(image_tag(product.image), product_path(product))%></td>
-        <td>
+        <td class="first"><%=link_to(image_tag(product.image), product_path(product))%></td>
+        <td class="second">
           <h3><%=link_to product.name,  product_path(product)%></h3>
           <h4>
              Model:&nbsp;<span class="normal"><%= product.model_number %></span>
           </h4>
           <div class="price"><%= number_to_currency(product.price, :precision => 2) %></div>
         </td>
-        <td>Leaves in 1-2 days</td>
-        <td><%= text_field_tag(:quantity, "", :size => 6) %></td>
-        <td><%= number_to_currency(product.price, :precision => 2)%></td>
-        <td></td>        
+        <td class="third">Leaves in 1-2 days</td>
+        <td class="fourth"><%= text_field_tag(:quantity, "", :size => 2) %></td>
+        <td class="fifth"><div><%= number_to_currency(product.price, :precision => 2)%></div></td>
+        <td class="sixth"><div>$12121</div></td>        
       </tr>
       <% end %>
     </tbody>
   </table>
-<% end%>
+    <div class="title_container">
+      <h1></h1>
+     <div><%=image_submit_tag("checkout.png", :alt => "check out")%></div>
+  </div>
+  <div class="clear"></div>    
+<% end %>

@@ -30,8 +30,9 @@
            }
         }
         table {
-            margin-top: 15px;
+            margin-top: 10px;
             margin-left: 10px;
+            margin-bottom: 10px;
             width: 750px;
             border: 1px solid #E1E5E7;
             border-collapse: collapse;
@@ -46,7 +47,7 @@
             
             td {
                 font-family: 'Times New Roman',Times,Serif;
-                font-size : 11px;
+                font-size : 12px;
                 padding: 7px;
                 
                 div.price {
@@ -58,20 +59,86 @@
                 
                 img{
                     margin-left: 5px;
-                    width: 60px;
-                    height: 60px;
+                    width: 80px;
+                    height: 80px;
                 }
                 
-                h3{
+                h3, h4{
                     margin-top: 3px;
                     font-size: 13px;
                     font-weight: bold;
                     color: #043464;
-                }                
+                    line-height: 1.27em;
+                }
+                h4 {
+                    color: #000;
+                    font-weight: normal;
+                }
             }
+            
+            td.first{
+                width: 100px;
+            }
+            
+            td.second{
+                width: 220px;
+            }
+            
+            td.fourth{
+                input[type="text"]{
+                    margin-left: 30px;
+                }
+            }
+            
+            td.fifth{
+                div {
+                    float: right;
+                    margin-right: 15px;
+                }
+                
+            }            
                         
 
+            td.sixth{
+                div {
+                    float: right;
+                    margin-right: 25px;
+                }
+                
+            }
             
+            tfoot{
+                background: none repeat scroll 0 0 #F5FAFC;
+                border-top: 1px solid #D5D5D5;
+                
+                div{
+                    float: right;
+                    width: 450px;
+                    margin-right: 25px;
+                    font-size: 14px;
+                    dl{
+                        float: right;
+                        padding: 5px;
+                        
+                        dt {
+                            clear: left;
+                            float: left;
+                            width: 300px;
+                            text-align: right;
+                        }
+                        dd {
+                            float: left;
+                            width: 100px;
+                            text-align: right;
+                        }
+                    }
+                    
+                    dl:last-child{
+                         font-weight: bold;
+                         color: #AE1231;
+                    }
+                }
+            }
 
         }
     }
