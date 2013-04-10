@@ -9,7 +9,8 @@ Robovacuum::Application.routes.draw do
   match "search" => "products#search", :via => :post, :as => "search"
   match "add_cart" => "products#add_cart", :via => :post, :as => "add_cart"
   match "empty_cart" => "products#empty_cart", :via => :get, :as => "empty_cart"
-  
+  match "show_cart" => "products#show_cart", :via => :get, :as => "show_cart"
+  match "check_out" => "products#check_out", :via => :get, :as => "check_out"
   
   
   resources :products

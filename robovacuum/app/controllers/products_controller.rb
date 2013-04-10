@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   
-   before_filter :initialize_cart, :only => [:add_cart, :index, :show]
+   before_filter :initialize_cart, :only => [:add_cart, :index, :show, :show_cart]
   
   
   # GET /products
@@ -55,10 +55,17 @@ class ProductsController < ApplicationController
     redirect_to root_url
   end
   
+  def show_cart
+    calculate_cart
+  end
+  
+  def check_out
+
+  end
+  
 protected
   def initialize_cart
     session[:cart] ||= []
-    @my_cart = []
   end
   
   def calculate_cart

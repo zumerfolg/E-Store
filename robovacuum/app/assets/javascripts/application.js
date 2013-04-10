@@ -17,7 +17,7 @@
 $(document).ready(function(){
    $('.cart form').bind("ajax:success", function(evt, data, status, xhr){
        var count = xhr.responseText; 
-       $('#item').text(count == 1 ? count + " item" : count + " items");
+       $('#item').html(count == 1 ? "<a href='/show_cart'>" + count + " item</a>" : "<a href='/show_cart'>" + count + " items</a>");
    });
    
    $('#delcart a').bind("ajax:success", function(evt, data, status, xhr){

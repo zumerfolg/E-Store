@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
   <section id="container">		
           <section id="image_main">
                   <h5>Explore coolest robot vacuums</h5>
@@ -23,7 +22,11 @@
               <div id="delcart"><%=link_to(image_tag("delete.png"), empty_cart_path, :remote => true)%></div>
             </div>
             <div id="block-content">
-              <p class="info">You have <strong id="item"><%= @my_cart.size.zero? ? 'no items' : pluralize(@my_cart.size, 'item')%></strong> in your shopping cart.</p>
+              <% if @my_cart.size.zero?%>
+                  <p class="info">You have <strong id="item">no items</strong> in your shopping cart.</p>
+              <% else %>
+                  <p class="info">You have <strong id="item"><%= link_to(pluralize(@my_cart.size, 'item'), show_cart_path)%></strong> in your shopping cart.</p>
+              <% end %>  
             </div>
           </aside>
  

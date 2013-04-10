@@ -1,3 +1,79 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+ /***********************************************************************/
+/*                        Shopping Cart                                */
+/***********************************************************************/
+ 
+ 
+ section#content {
+    #cart_form {
+        .title_container{
+           h1{
+             float: left;
+             font-size: 2.27em;
+             line-height: 1.27em;
+             margin: {
+               left: 23px;
+               top : 10px;
+             }
+             width : 590px;
+           }
+           div {
+               float: left;
+               input[type="image"] {
+                   width: 120px;
+                   height: 40px;
+                   margin-top: 8px;
+               }
+           }
+        }
+        table {
+            margin-top: 15px;
+            margin-left: 10px;
+            width: 750px;
+            border: 1px solid #E1E5E7;
+            border-collapse: collapse;
+            border-spacing: 0;
+            
+            th {
+                padding : 20px;
+                text-align: left;
+                border-bottom: 1px solid #E1E5E7;
+            }
+            
+            td {
+                font-family: 'Times New Roman',Times,Serif;
+                font-size : 11px;
+                padding: 5px;
+                
+                div.price {
+                    color: #AE1231;
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin: 7px 0px 15px; 
+                }
+                
+                img{
+                    margin-left: 5px;
+                    width: 60px;
+                    height: 60px;
+                }
+                
+                h3{
+                    margin-top: 3px;
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: #043464;
+                }                
+            }
+                        
+
+            
+
+        }
+    }
+
+
+ }
