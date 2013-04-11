@@ -12,34 +12,34 @@
   <% end %>
   
   <div id="left">
-    <div>
+    <div class="info">
       <span class="red">*</span>&nbsp;<%= f.label :email %><br />
       <%= f.text_field :email %>
     </div>
-    <div>
+    <div class="info">
       <span class="red">*</span>&nbsp;<%= f.label :password %><br />
       <%= f.text_field :password %>
     </div>
-    <div>
+    <div class="info">
       <span class="red">*</span>&nbsp;<%= f.label :first_name %><br />
       <%= f.text_field :first_name %>
     </div>
-    <div>
+    <div class="info">
       <span class="red">*</span>&nbsp;<%= f.label :last_name %><br />
       <%= f.text_field :last_name %>
     </div>    
   </div>
   
   <div id="right">
-    <div>
+    <div class="info">
       <%= f.label :city %><br />
       <%= f.text_field :city %>
     </div>
-    <div>
+    <div class="info">
       <%= f.label :postal_code %><br />
       <%= f.text_field :postal_code %>
     </div>
-    <div>
+    <div class="info">
       <span class="red">*</span>&nbsp;<%= f.label :province_id %><br />
       <%= f.collection_select :province_id, @provinces, :id, :name %>
     </div>

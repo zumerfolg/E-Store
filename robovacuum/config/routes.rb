@@ -11,11 +11,12 @@ Robovacuum::Application.routes.draw do
   match "empty_cart" => "products#empty_cart", :via => :get, :as => "empty_cart"
   match "show_cart" => "products#show_cart", :via => :get, :as => "show_cart"
   match "check_out" => "products#check_out", :via => :get, :as => "check_out"
-  match "sign_in" => "product#sign_in", :via => :post, :as => "sign_in"
+  match "sign_in" => "products#sign_in", :via => :post, :as => "sign_in"
+  
+  match "create_order" => "orders#create", :via => :post, :as => "create_order"
   
   resources :products
   resources :customers
-  resources :orders
 
   
   get "admin" => "admin/products#index"

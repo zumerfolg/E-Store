@@ -1,6 +1,12 @@
 class CustomersController < ApplicationController
   
-  before_filter :get_cart, :only => :new
+  before_filter :get_cart, :only => [:new]
+  before_filter :get_province,  :only => [:new, :edit, :create]
+  
+  
+  def get_province
+    @provinces = Province.order(:name)
+  end  
   
   
   # GET /customers
@@ -29,7 +35,6 @@ class CustomersController < ApplicationController
   # GET /customers/new.json
   def new
     @customer = Customer.new
-    @provinces = Province.order(:name)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +54,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Customer was successfully created.' }
         format.json { render json: @customer, status: :created, location: @customer }
       else
         format.html { render action: "new" }

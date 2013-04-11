@@ -3,4 +3,7 @@ class Customer < ActiveRecord::Base
   
   belongs_to :province
   
+  validates :email, :first_name, :last_name, :password, :province_id, :presence => true
+  validates :email, :uniqueness => true  
+  
 end
