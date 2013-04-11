@@ -57,6 +57,29 @@ class ProductsController < ApplicationController
   
   def show_cart
     calculate_cart
+    
+    @product_hash = Hash.new
+    @total = 0
+    
+    @my_cart.each do |product|
+    detail_hash = {:name => '', :model_number => '', :image => '', :price => 0, :quantity => 0, :subtotal => 0}      
+      if @product_hash.has_key?(product.id)
+        temp_hash = @product_hash[product.id]
+        temp_hash[:quantity] += 1
+        temp_hash[:subtotal] += product.price
+        @product_hash[product.id] = temp_hash
+      else
+        detail_hash[:name] = product.name
+        detail_hash[:model_number] = product.model_number
+        detail_hash[:image] = product.image
+        detail_hash[:price] = product.price
+        detail_hash[:subtotal] = product.price
+        detail_hash[:quantity] = 1
+        @product_hash[product.id] = detail_hash
+      end
+      @total += detail_hash[:subtotal]
+    end
+    
   end
   
   def check_out

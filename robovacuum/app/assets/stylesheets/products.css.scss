@@ -85,8 +85,9 @@
             }
             
             td.fourth{
-                input[type="text"]{
-                    margin-left: 30px;
+                div{
+                    float: right;
+                    margin-right: 30px;
                 }
             }
             
@@ -114,11 +115,13 @@
                 div{
                     float: right;
                     width: 450px;
-                    margin-right: 25px;
+                    margin-right: 20px;
                     font-size: 14px;
                     dl{
                         float: right;
                         padding: 5px;
+                        font-weight: bold;
+                        color: #AE1231;
                         
                         dt {
                             clear: left;
@@ -132,11 +135,7 @@
                             text-align: right;
                         }
                     }
-                    
-                    dl:last-child{
-                         font-weight: bold;
-                         color: #AE1231;
-                    }
+
                 }
             }
 
