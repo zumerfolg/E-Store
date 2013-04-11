@@ -15,6 +15,7 @@ Robovacuum::Application.routes.draw do
   
   resources :products
   resources :customers
+  resources :orders
 
   
   get "admin" => "admin/products#index"
