@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   
-   before_filter :initialize_cart, :only => [:add_cart, :index, :show, :show_cart]
+   before_filter :initialize_cart, :only => [:add_cart, :index, :show, :search, :show_cart, :check_out]
   
   
   # GET /products
@@ -42,6 +42,7 @@ class ProductsController < ApplicationController
        redirect_to root_path
     end
     @products = Product.where("name LIKE ? OR description LIKE ?", "%#{keywords}%", "%#{keywords}%").order(:name)
+    calculate_cart
   end
   
   def add_cart
@@ -80,10 +81,13 @@ class ProductsController < ApplicationController
       @total += detail_hash[:subtotal]
     end
     
+    session[:order] = @product_hash
+    
+    
   end
   
   def check_out
-
+      calculate_cart
   end
   
 protected
@@ -92,7 +96,7 @@ protected
   end
   
   def calculate_cart
-    session[:cart].each {|id| @my_cart << Product.find(id)}    
+    session[:cart].each {|id| @my_cart << Product.find(id)}
   end
  
 end

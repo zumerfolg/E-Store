@@ -540,22 +540,22 @@ section#content section#about h1#second {
 
 section#content > h1 {
 	font-size: 2em;
-    line-height: 1;
-    font-style: normal;
-    font-weight: normal;
-    margin: 30px 10px 0px 15px;
-    padding: 5px 0 5px;
-    border-bottom: 3px solid #666666;
+	line-height: 1;
+	font-style: normal;
+	font-weight: normal;
+	margin: 30px 10px 0px 15px;
+	padding: 5px 0 5px;
+	border-bottom: 3px solid #666666;
 }
 
 
 section#content ul {
 	color: #242C2E;
-    font-size: 15px;
-    line-height: 150%;
-    margin: 5px 15px 20px;
-    list-style-position:inside;
-    list-style-type:disc;
+	font-size: 15px;
+	line-height: 150%;
+	margin: 5px 15px 20px;
+	list-style-position:inside;
+	list-style-type:disc;
 }
 
 section#content ul  li {
@@ -569,9 +569,9 @@ section#content div#map {
 }
 
 section#content div#map iframe {
-    width: 600px;
-    height:350px;
-    border: none;
+	width: 600px;
+	height:350px;
+	border: none;
 }
 
 
