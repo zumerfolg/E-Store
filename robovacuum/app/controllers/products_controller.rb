@@ -63,7 +63,8 @@ class ProductsController < ApplicationController
     @total = 0
     
     @my_cart.each do |product|
-    detail_hash = {:name => '', :model_number => '', :image => '', :price => 0, :quantity => 0, :subtotal => 0}      
+      @total += product.price
+      detail_hash = {:name => '', :model_number => '', :image => '', :price => 0, :quantity => 0, :subtotal => 0}      
       if @product_hash.has_key?(product.id)
         temp_hash = @product_hash[product.id]
         temp_hash[:quantity] += 1
@@ -78,7 +79,7 @@ class ProductsController < ApplicationController
         detail_hash[:quantity] = 1
         @product_hash[product.id] = detail_hash
       end
-      @total += detail_hash[:subtotal]
+
     end
     
     session[:order] = @product_hash

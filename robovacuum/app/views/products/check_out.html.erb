@@ -1,0 +1,27 @@
+<div>
+  <div id="sign_in">
+    <%=form_tag(sign_in_path, :method => :post) do%>
+        <h3> Returning Customers</h3>
+        <div>
+          <%= label_tag 'email', 'Email Address' %>
+          <%= text_field_tag 'email', '', :size => 35 %>
+        </div>
+        <div>
+          <%= label_tag 'passwd', 'Password' %>
+          <%= password_field_tag 'passwd', '', :size => 35 %>
+        </div>
+        <div class="button">
+          <%= image_submit_tag('signin.jpg', :alt =>'sign in') %>
+        </div>
+    <% end %>
+  </div>
+  <div id="account">
+    <div>
+      <h3>Create an Account</h3>
+      <p> Your account provides you with access to a variety of benefits,
+          such as order tracking and a purchase history.
+          Registration is quick and simple. </p>
+      <%=link_to(image_tag('account.png'), new_customer_path) %>
+    </div>
+  </div>
+</div>
