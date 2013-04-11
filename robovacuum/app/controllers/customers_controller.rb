@@ -1,4 +1,8 @@
 class CustomersController < ApplicationController
+  
+  before_filter :get_cart, :only => :new
+  
+  
   # GET /customers
   # GET /customers.json
   def index
@@ -81,4 +85,12 @@ class CustomersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+protected
+  
+  def get_cart
+    session[:cart] ||= []
+    session[:cart].each {|id| @my_cart << Product.find(id)}
+  end
+  
 end

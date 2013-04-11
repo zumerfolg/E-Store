@@ -10,36 +10,45 @@
       </ul>
     </div>
   <% end %>
+  
+  <div id="left">
+    <div>
+      <span class="red">*</span>&nbsp;<%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div>
+      <span class="red">*</span>&nbsp;<%= f.label :password %><br />
+      <%= f.text_field :password %>
+    </div>
+    <div>
+      <span class="red">*</span>&nbsp;<%= f.label :first_name %><br />
+      <%= f.text_field :first_name %>
+    </div>
+    <div>
+      <span class="red">*</span>&nbsp;<%= f.label :last_name %><br />
+      <%= f.text_field :last_name %>
+    </div>    
+  </div>
+  
+  <div id="right">
+    <div>
+      <%= f.label :city %><br />
+      <%= f.text_field :city %>
+    </div>
+    <div>
+      <%= f.label :postal_code %><br />
+      <%= f.text_field :postal_code %>
+    </div>
+    <div>
+      <span class="red">*</span>&nbsp;<%= f.label :province_id %><br />
+      <%= f.collection_select :province_id, @provinces, :id, :name %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>    
+  </div>
+  
+  <div class="clear"></div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :postal_code %><br />
-    <%= f.text_field :postal_code %>
-  </div>
-  <div class="field">
-    <%= f.label :province_id %><br />
-    <%= f.collection_select :province_id, @provinces, :id, :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

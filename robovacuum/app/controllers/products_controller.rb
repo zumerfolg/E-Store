@@ -1,13 +1,12 @@
 class ProductsController < ApplicationController
   
-   before_filter :initialize_cart, :only => [:add_cart, :index, :show, :search, :show_cart, :check_out]
-  
+   before_filter :initialize_cart, :only => :add_cart
+   before_filter :get_cart, :only => [:index, :show, :about, :contact, :home, :search, :show_cart, :check_out]
   
   # GET /products
   # GET /products.json
   def index
     @products = Product.where('stock_quantity > 0').order(:name)
-    calculate_cart
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,7 +41,6 @@ class ProductsController < ApplicationController
        redirect_to root_path
     end
     @products = Product.where("name LIKE ? OR description LIKE ?", "%#{keywords}%", "%#{keywords}%").order(:name)
-    calculate_cart
   end
   
   def add_cart
@@ -57,8 +55,7 @@ class ProductsController < ApplicationController
   end
   
   def show_cart
-    calculate_cart
-    
+   
     @product_hash = Hash.new
     @total = 0
     
@@ -88,7 +85,6 @@ class ProductsController < ApplicationController
   end
   
   def check_out
-      calculate_cart
   end
   
 protected
@@ -98,6 +94,11 @@ protected
   
   def calculate_cart
     session[:cart].each {|id| @my_cart << Product.find(id)}
+  end
+  
+  def get_cart
+    initialize_cart
+    calculate_cart
   end
  
 end
