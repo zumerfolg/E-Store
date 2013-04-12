@@ -2,6 +2,6 @@
 <% if @products.empty? %>
   <p><em>No Results found.</em></p>
 <% else %>
-   <%= render @products%>   
+   <%= render :partial => "shared/product", :collection => @products, :as => :product %> 
 <% end %>  
  

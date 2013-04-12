@@ -1,5 +1,16 @@
-<h1>New order</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', orders_path %>
+ <%=form_tag(create_order_path, :method => :post, :id => 'order_form') do %>
+  <div class="title_container">
+     <h1 class="title">Checkout Items</h1>
+     <div><%=image_submit_tag("order.jpg", :alt => "order now")%></div>
+  </div>
+  <div class="clear"></div>
+  
+ <%= render :partial => "shared/cart", :object => [@product_hash], :locals =>{:after_tax => true} %>
+ 
+     <div class="title_container">
+      <h1></h1>
+     <div><%=image_submit_tag("order.jpg", :alt => "order now")%></div>
+  </div>
+  <div class="clear"></div>
+  <%= hidden_field_tag(:id, @customer_id) %>
+<% end %>

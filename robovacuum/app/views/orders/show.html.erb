@@ -1,30 +1,16 @@
-<p id="notice"><%= notice %></p>
+ <%=form_tag(create_order_path, :method => :post, :id => 'order_form') do %>
+  <div class="title_container">
+     <h1 class="title">Order Information</h1>
+     <div>&nbsp;</div>
+  </div>
+  <div class="clear"></div>
+  
+ <%= render :partial => "shared/cart", :object => [@product_hash], :locals =>{:after_tax => true} %>
+ 
+     <div class="title_container">
+      <h1>&nbsp;</h1>
+     <div>&nbsp;</div>
+  </div>
+  <div class="clear"></div>
+<% end %>
 
-<p>
-  <b>Status:</b>
-  <%= @order.status %>
-</p>
-
-<p>
-  <b>Pst rate:</b>
-  <%= @order.pst_rate %>
-</p>
-
-<p>
-  <b>Gst rate:</b>
-  <%= @order.gst_rate %>
-</p>
-
-<p>
-  <b>Hst rate:</b>
-  <%= @order.hst_rate %>
-</p>
-
-<p>
-  <b>Customer:</b>
-  <%= @order.customer_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>

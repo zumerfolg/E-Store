@@ -8,7 +8,7 @@
  
  
  section#content {
-    #cart_form {
+    #cart_form, #order_form {
         .title_container{
            h1{
              float: left;
@@ -120,8 +120,7 @@
                     dl{
                         float: right;
                         padding: 5px;
-                        font-weight: bold;
-                        color: #AE1231;
+
                         
                         dt {
                             clear: left;
@@ -134,8 +133,12 @@
                             width: 100px;
                             text-align: right;
                         }
+                        
+                        .total{
+                            font-weight: bold;
+                            color: #AE1231;                            
+                        }
                     }
-
                 }
             }
 
@@ -148,7 +151,7 @@
 /*                   Sign In  Or Create Account                         */
 /***********************************************************************/
 section#content{
-   &>div {
+   &>div#sign_in_form {
         margin-left: 20px;
         margin-top : 20px;
         div#sign_in {

@@ -13,7 +13,9 @@ Robovacuum::Application.routes.draw do
   match "check_out" => "products#check_out", :via => :get, :as => "check_out"
   match "sign_in" => "products#sign_in", :via => :post, :as => "sign_in"
   
+  match "new_order" => "orders#new", :via => :get, :as => "new_order"
   match "create_order" => "orders#create", :via => :post, :as => "create_order"
+  match "show_order" => "orders#show", :via => :get, :as => "show_order"
   
   resources :products
   resources :customers

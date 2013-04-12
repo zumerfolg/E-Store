@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   
-  before_filter :get_cart, :only => [:new]
+  before_filter :get_cart, :only => [:new, :create]
   before_filter :get_province,  :only => [:new, :edit, :create]
   
   
@@ -54,7 +54,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to root_path, notice: 'Customer was successfully created.' }
+        format.html { redirect_to  new_order_path(:id => @customer), :notice => 'Customer was successfully created.' }
         format.json { render json: @customer, status: :created, location: @customer }
       else
         format.html { render action: "new" }

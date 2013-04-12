@@ -1,0 +1,50 @@
+
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">Description</th>
+        <th>Shipping</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <div class="cart_shipping">
+            <% if after_tax %>
+            <dl>
+              <dt>Tax:</dt>
+              <dd><%=number_to_currency(@tax)%></dd>
+            </dl>
+            <% end %>
+            <dl>
+              <dt class="total">Total:</dt>
+              <dd class="total"><%=number_to_currency(@total)%></dd>
+            </dl>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <%
+         @product_hash.each do |key, product|
+      %>
+      <tr>
+        <td class="first"><%=link_to(image_tag(product[:image]), product_path(key))%></td>
+        <td class="second">
+          <h3><%=link_to product[:name],  product_path(key)%></h3>
+          <h4>
+             Model:&nbsp;<span class="normal"><%= product[:model_number] %></span>
+          </h4>
+          <div class="price"><%= number_to_currency(product[:price], :precision => 2) %></div>
+        </td>
+        <td class="third">Leaves in 1-2 days</td>
+        <td class="fourth"><div><%= product[:quantity] %></div></td>
+        <td class="fifth"><div><%= number_to_currency(product[:price], :precision => 2)%></div></td>
+        <td class="sixth"><div><%= number_to_currency(product[:subtotal], :precision => 2) %></div></td>        
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
