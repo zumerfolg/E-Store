@@ -48,6 +48,7 @@ class OrdersController < ApplicationController
   
     
     @total += @tax.round(2)
+    @customer = order_customer
     
       
     respond_to do |format|

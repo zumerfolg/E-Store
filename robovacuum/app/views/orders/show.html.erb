@@ -5,6 +5,28 @@
   </div>
   <div class="clear"></div>
   
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Province</th>
+        <th>city</th>
+        <th>Postal Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%=@customer.first_name + " " + @customer.last_name%></td>
+        <td><%=@customer.email%></td>
+        <td><%=@customer.province.name%></td>
+        <td><%=@customer.city%></td>
+        <td><%=@customer.postal_code%></td>        
+      </tr>
+    </tbody>
+  </table>
+  
+  
  <%= render :partial => "shared/cart", :object => [@product_hash], :locals =>{:after_tax => true} %>
  
      <div class="title_container">
