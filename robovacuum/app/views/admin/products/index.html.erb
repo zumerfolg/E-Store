@@ -19,9 +19,9 @@
         <td class="align-right"><%= admin_product.stock_quantity %></td>
         <td><%= admin_product.model_number %></td>
         <td>
-          <%= link_to 'Show', admin_product_path(admin_product), class: "btn-small btn-info" %>
-          <%= link_to 'Edit', edit_admin_product_path(admin_product), class: "btn-small btn-primary" %>
-          <%= link_to 'Destroy', admin_product_path(admin_product), class: "btn-small btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Show', admin_product_path(admin_product)%>
+          <%= link_to 'Edit', edit_admin_product_path(admin_product)%>
+          <%= link_to 'Destroy', admin_product_path(admin_product), method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
@@ -29,6 +29,6 @@
 </table>
 
 <br />
-<div>
+<div class="new">
 <%= link_to 'New Product', new_admin_product_path%>
 </div>

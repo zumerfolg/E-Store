@@ -14,8 +14,19 @@
   <br/>
   <%= image_tag @admin_product.image if @admin_product.image.present? %><br/><br/>
   
+  
+  <fieldset class="inputs">
+    <ol>
+      <li class="string">
+        <label for="product_title" class=" label">Title<abbr title="required">*</abbr></label>
+        
+        <input type="text" name="product[title]" maxlength="255" id="product_title">
+      </li>
+    </ol>
+  </fieldset>
+  
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, :class => "label" %><br />
      <%= f.text_field :name %><br />
   </div>
   
