@@ -1,0 +1,30 @@
+<%= form_for [:admin, @admin_about] do |f| %>
+  <% if @admin_about.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_about.errors.count, "error") %> prohibited this about from being saved:</h2>
+
+      <ul>
+      <% @admin_about.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :profile %><br />
+    <%= f.cktext_area :profile,  :width=>'400px', :height=>'200px' %>
+  </div>
+  <div class="field">
+    <%= f.label :vision %><br />
+    <%= f.cktext_area :vision,  :width=>'400px', :height=>'200px' %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.cktext_area :location,  :width=>'400px', :height=>'200px' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

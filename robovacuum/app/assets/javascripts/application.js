@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require ckeditor/init
 
 $(document).ready(function(){
    $('.cart form').bind("ajax:success", function(evt, data, status, xhr){
@@ -24,6 +25,21 @@ $(document).ready(function(){
        var count = xhr.responseText;
        $('#item').text("no items");
     });
+   
+   
+   
+   //Admin Menu
+   $('#tabs li.current').removeClass("current");
+   
+    var title = $('#page_title').text()
+    if(title != ""){
+        title = title.charAt(0).toLowerCase() + title.slice(1);
+        $('#'+title).addClass("current");
+    }else {
+        $('#dashboard').addClass("current");
+        $('#page_title').text("Dashboard");
+    }
+
 
 });
 

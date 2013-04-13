@@ -397,7 +397,9 @@ section#content div.summary {
 	margin: 20px 5px 10px 10px;
 }
 
-section#content div.summary a:visited, a:hover, a:link{
+section#content div.summary a:visited,
+section#content div.summary a:hover,
+section#content div.summary a:link{
 	background-color: #FFF;
 	color: #085EB9;
 }
@@ -503,82 +505,7 @@ section#content div#info {
     padding: 0;
 }
 
-/***********************************************************************/
-/*                        About Us Part                                */
-/***********************************************************************/
 
-section#content section#about {
-	width: 747px;
-	height: 200px;
-	margin: 20px 0px 10px 10px;
-	background:#fff;
-	background-image:url("/assets/samsung_vacuum.jpg");
-	background-size:250px 200px;
-	background-position: 400px 0px;
-	background-repeat: no-repeat;
-	border:solid 1px #dedede;
-	border-radius: 5px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;	
-}
-
-section#content section#about h1 {
-	position: relative;
-	font-weight: normal;
-	font-size: 24px;
-}
-
-section#content section#about h1#first {
-	top: 60px;
-	left:40px;
-}
-
-section#content section#about h1#second {
-	top: 70px;
-	left:40px;
-}
-
-section#content > h1 {
-	font-size: 2em;
-	line-height: 1;
-	font-style: normal;
-	font-weight: normal;
-	margin: 30px 10px 0px 15px;
-	padding: 5px 0 5px;
-	border-bottom: 3px solid #666666;
-}
-
-
-section#content ul {
-	color: #242C2E;
-	font-size: 15px;
-	line-height: 150%;
-	margin: 5px 15px 20px;
-	list-style-position:inside;
-	list-style-type:disc;
-}
-
-section#content ul  li {
-	display:list-item;
-}
-
-section#content div#map {
-	width: 600px;
-	margin-left: 15px;
-	margin-bottom: 30px;
-}
-
-section#content div#map iframe {
-	width: 600px;
-	height:350px;
-	border: none;
-}
-
-
-section#content div#map a {
-	color:#0000FF;
-	text-align:left
-}
 
 /***********************************************************************/
 /*                        Contact Part                                 */

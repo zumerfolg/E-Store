@@ -25,15 +25,16 @@ function drawImage(canvas, context) {
 
 function onload(){
 
-	//	Get the canvas from the DOM, and assign
-	//	it a 2d context, which can be used to draw
-	//	on the canvas
-	var canvas = document.getElementById("logo");
-	var context = canvas.getContext("2d");	
-    //draw logo image on the canvas	
-	drawImage(canvas, context);
-	
-	
+	if(typeof(document.getElementById("logo")) != 'undefined' && document.getElementById("logo") != null){
+		//	Get the canvas from the DOM, and assign
+		//	it a 2d context, which can be used to draw
+		//	on the canvas
+		var canvas = document.getElementById("logo");
+		var context = canvas.getContext("2d");	
+		//draw logo image on the canvas	
+		drawImage(canvas, context);	    
+	}
+
 }
 
 

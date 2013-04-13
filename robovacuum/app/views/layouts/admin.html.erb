@@ -6,54 +6,42 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-
-          <%= link_to "Admin Backend", admin_path, class: "brand" %>
-
-          <div class="container-fluid nav-collapse">
-            <ul class="nav">
-              <li>
-                <%= link_to "Robot Vacuum", root_path %>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+<body class="admin">
+  
+    <div id="wrapper">
+ 
+      <div id="header">
+        <h1 id="site_title" class="site_title">Cool Admin Depot</h1>
+        <ul id="tabs">
+          <li id="customers"><%= link_to "Customers", admin_customers_path(:title => "Customers") %></li>
+          <li id="dashboard" class="current"><%= link_to "Dashboard", admin_products_path(:title => "Dashboard") %></li>
+          <li id="orders"><a href="/admin/orders">Orders</a></li>
+          <li id="products"><%=link_to "Products", admin_products_path(:title => "Products")%></li>
+        </ul>
       </div>
+      
     </div>
+    
+    <div id="title_bar" class="title_bar">
+            <div id="titlebar_left">
+              <span class="breadcrumb">
+                  <a href="/admin">Admin</a> <span class="breadcrumb_sep">/</span>
+              </span>
+              <h2 id="page_title"><%=params[:title]%></h2>
+            </div>
+            <div id="titlebar_right"></div>
+      </div>    
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Menu</li>
-              <li><%= link_to "Home", admin_path %></li>
-              <li><%= link_to "Admin Products", admin_products_path %></li>
-              <li><%= link_to "Back to Robot Vacuum Shop", root_path %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        <div class="span9">
-          <%= yield %>
-        </div>
-      </div><!--/row-->
+      
+    <div id="admin_content" class="without_sidebar">
+       <div id="main_content_wrapper">
+          <div id="main_content">
+             <%= yield %>
+          </div>
+       </div>
+    </div>  
 
-      <footer>
-          <section id="copyright">
-                  <p>Copyright &copy; 2013 <span class="blue">Robotics Vacuum Company</span></p>
-          </section> 
-      </footer>
 
-    </div>
 
 </body>
 </html>

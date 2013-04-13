@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Profile:</b>
+  <%= raw @admin_about.profile %>
+</p>
+
+<p>
+  <b>Vision:</b>
+  <%= raw @admin_about.vision %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= raw @admin_about.location %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_admin_about_path(@admin_about) %> |
+<%= link_to 'Back', admin_abouts_path %>

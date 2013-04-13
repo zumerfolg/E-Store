@@ -173,16 +173,21 @@ function onload(){
      
      hideAllErrors();
 
-     // Add event listener for the form submit
-     document.getElementById("contact").addEventListener("submit", validate, false);
+     if(typeof(document.getElementById("contact")) != 'undefined' && document.getElementById("contact") != null){
+	// Add event listener for the form submit
+	document.getElementById("contact").addEventListener("submit", validate, false);
+	
+	//Reset the form using the default browser reset
+	//This is done to ensure the radio buttons are unchecked when the page is refreshed
+	//This line of code must be done before attaching the event listener for the customer reset
+	document.getElementById("contact").reset();
+	
+	//Add event listener for reset function
+	document.getElementById("contact").addEventListener("reset", resetForm, false);	
+     }
      
-     //Reset the form using the default browser reset
-     //This is done to ensure the radio buttons are unchecked when the page is refreshed
-     //This line of code must be done before attaching the event listener for the customer reset
-     document.getElementById("contact").reset();
      
-     //Add event listener for reset function
-     document.getElementById("contact").addEventListener("reset", resetForm, false);
+
 	
 }
 

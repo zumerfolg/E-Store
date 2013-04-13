@@ -1,10 +1,9 @@
 Robovacuum::Application.routes.draw do
   
-
   root :to => "products#index"
   
   match "home" => "products#home", :via => :get, :as => "home"
-  match "about" => "products#about", :via => :get, :as => "about"
+  match "about" => "abouts#show", :via => :get, :as => "about"
   match "contact" => "products#contact", :via => :get, :as => "contact"
   match "search" => "products#search", :via => :post, :as => "search"
   match "add_cart" => "products#add_cart", :via => :post, :as => "add_cart"
@@ -19,11 +18,11 @@ Robovacuum::Application.routes.draw do
   
   resources :products
   resources :customers
-
+  resources :abouts
   
   get "admin" => "admin/products#index"
   namespace :admin do 
-    resources :products, :provinces, :customers
+    resources :products, :provinces, :customers, :abouts
   end
 
   # The priority is based upon order of creation:

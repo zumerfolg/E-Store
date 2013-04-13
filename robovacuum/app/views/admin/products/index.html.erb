@@ -1,7 +1,5 @@
-<h3>Listing Products</h3>
 
-
-<table class="table table-striped">
+<table>
  <thead>
    <tr>
       <th>Name</th>
@@ -9,15 +7,16 @@
       <th>Price</th>      
       <th>Stock Qty</th>
       <th>Model Number</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @admin_products.each do |admin_product| %>
       <tr>
         <td><%= admin_product.name %></td>
-        <td><%= truncate(admin_product.description, length: 40, omission: "...") %></td>
-        <td><%= admin_product.price %></td>
-        <td><%= admin_product.stock_quantity %></td>
+        <td><%= truncate(admin_product.description, length: 100, omission: "...") %></td>
+        <td class="align-right"><%= number_to_currency(admin_product.price, :precision => 2) %></td>
+        <td class="align-right"><%= admin_product.stock_quantity %></td>
         <td><%= admin_product.model_number %></td>
         <td>
           <%= link_to 'Show', admin_product_path(admin_product), class: "btn-small btn-info" %>
@@ -29,10 +28,7 @@
   </tbody>
 </table>
 
-<center>
-
-</center>
-
 <br />
-
-<%= link_to 'New Product', new_admin_product_path, class: "btn" %>
+<div>
+<%= link_to 'New Product', new_admin_product_path%>
+</div>
