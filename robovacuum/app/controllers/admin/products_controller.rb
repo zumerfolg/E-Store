@@ -2,13 +2,15 @@ class Admin::ProductsController < ApplicationController
   
   layout "admin"
   
+  after_filter :create_title, :except => [:index]
+  
    # GET /admin/products
   def index
     #@admin_products = Product.page params[:page]
     @admin_products = Product.all
 
     respond_to do |format|
-      format.html
+      format.html {create_title}
       format.json { render json: @admin_product }
     end
   end
@@ -79,5 +81,11 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+
+protected
+   
+  def create_title
+    flash[:title] = "Products"
+  end
   
 end

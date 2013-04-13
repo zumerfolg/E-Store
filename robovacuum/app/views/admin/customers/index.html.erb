@@ -8,6 +8,7 @@
       <th>City</th>
       <th>Postal code</th>
       <th>Province</th>
+      <th></th>
     </tr>
   </thead>
 <tbody>
@@ -20,9 +21,10 @@
       <td><%= customer.city %></td>
       <td><%= customer.postal_code %></td>
       <td><%= customer.province_id %></td>
-      <td><%= link_to 'Show', admin_customer_path(customer) %></td>
-      <td><%= link_to 'Edit', edit_admin_customer_path(customer) %></td>
-      <td><%= link_to 'Destroy', admin_customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Show', admin_customer_path(customer) %>
+          <%= link_to 'Edit', edit_admin_customer_path(customer) %>
+          <%= link_to 'Destroy', admin_customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
     </tr>
   <% end %>
 </tbody>

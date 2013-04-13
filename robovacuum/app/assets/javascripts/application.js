@@ -29,7 +29,7 @@ $(document).ready(function(){
    
    
    //Admin Menu
-   $('#tabs li.current').removeClass("current");
+   $('#tabs li').removeClass("current");
    
     var title = $('#page_title').text()
     if(title != ""){

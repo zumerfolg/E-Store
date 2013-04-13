@@ -2,12 +2,14 @@ class Admin::ProvincesController < ApplicationController
  
   layout "admin"
   
+  after_filter :create_title, :except => [:index]
+  
   # GET /admin/provinces
   def index
     @admin_provinces = Province.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {create_title}# index.html.erb
       format.json { render json: @admin_provinces }
     end
   end
@@ -79,6 +81,13 @@ class Admin::ProvincesController < ApplicationController
       format.json { head :no_content }
     end
   end  
+  
+protected
+   
+  def create_title
+    flash[:title] = "Provinces"
+  end
+  
   
   
 end

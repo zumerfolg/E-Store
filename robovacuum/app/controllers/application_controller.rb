@@ -4,9 +4,11 @@ class ApplicationController < ActionController::Base
   
   before_filter :create_mycart
   
+
+  
 protected 
   def create_mycart
     @my_cart = []
-  end  
+  end
   
 end

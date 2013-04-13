@@ -11,23 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :pst %><br />
-    <%= f.text_field :pst %>
-  </div>
-  <div class="field">
-    <%= f.label :gst %><br />
-    <%= f.text_field :gst %>
-  </div>
-  <div class="field">
-    <%= f.label :hst %><br />
-    <%= f.text_field :hst %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br/>
+  
+  <fieldset class="inputs">
+    <ol>
+      <li>
+        <%= f.label :name%>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :pst%>
+        <%= f.text_area :pst %>
+      </li>
+      <li>
+        <%= f.label :gst%>
+        <%= f.text_field :gst %>
+      </li>
+      <li>
+        <%= f.label :hst %>
+        <%= f.text_field :hst %>
+      </li>
+    </ol>
+  </fieldset>
+  
+  <%= f.submit %>  
+  
 <% end %>

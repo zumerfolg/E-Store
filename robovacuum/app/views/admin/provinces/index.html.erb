@@ -1,4 +1,10 @@
-<h1>Listing provinces</h1>
+<div class="new">
+<%= link_to 'New Province', new_admin_province_path %>
+</div>
+<div class="clear"></div>
+
+<br />
+
 
 <table>
   <tr>
@@ -7,23 +13,23 @@
     <th>Gst</th>
     <th>Hst</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @admin_provinces.each do |province| %>
   <tr>
     <td><%= province.name %></td>
-    <td><%= province.pst %></td>
-    <td><%= province.gst %></td>
-    <td><%= province.hst %></td>
-    <td><%= link_to 'Show', admin_province_path(province) %></td>
-    <td><%= link_to 'Edit', edit_admin_province_path(province) %></td>
-    <td><%= link_to 'Destroy', admin_province_path(province), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= province.pst.round(2) %></td>
+    <td><%= province.gst.round(2) %></td>
+    <td><%= province.hst.round(2) %></td>
+    <td>
+        <%= link_to 'Show', admin_province_path(province) %>
+        <%= link_to 'Edit', edit_admin_province_path(province) %>
+        <%= link_to 'Destroy', admin_province_path(province), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Province', new_admin_province_path %>
+

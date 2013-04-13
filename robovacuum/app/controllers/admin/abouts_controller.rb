@@ -2,13 +2,15 @@ class Admin::AboutsController < ApplicationController
 
   layout "admin"
 
+  after_filter :create_title, :except => [:index]
+
   # GET /abouts
   # GET /abouts.json
   def index
     @admin_abouts = About.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {create_title}# index.html.erb
       format.json { render json: @admin_abouts }
     end
   end
@@ -83,5 +85,11 @@ class Admin::AboutsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+protected
+   
+  def create_title
+    flash[:title] = "Abouts"
+  end  
 
 end

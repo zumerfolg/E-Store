@@ -2,19 +2,18 @@ class Admin::CustomersController < ApplicationController
   
   layout "admin"
   
-  # GET /customers
-  # GET /customers.json
+  after_filter :create_title,:except => [:index]
+
   def index
     @customers = Customer.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {create_title}# index.html.erb
       format.json { render json: @customers }
     end
   end
 
-  # GET /customers/1
-  # GET /customers/1.json
+
   def show
     @customer = Customer.find(params[:id])
 
@@ -24,8 +23,7 @@ class Admin::CustomersController < ApplicationController
     end
   end
 
-  # GET /customers/new
-  # GET /customers/new.json
+
   def new
     @customer = Customer.new
 
@@ -40,8 +38,7 @@ class Admin::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
-  # POST /customers
-  # POST /customers.json
+
   def create
     @customer = Customer.new(params[:customer])
 
@@ -56,8 +53,7 @@ class Admin::CustomersController < ApplicationController
     end
   end
 
-  # PUT /customers/1
-  # PUT /customers/1.json
+
   def update
     @customer = Customer.find(params[:id])
 
@@ -71,5 +67,23 @@ class Admin::CustomersController < ApplicationController
       end
     end
   end
+  
+
+  def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
+  
+    respond_to do |format|
+      format.html { redirect_to customers_url }
+      format.json { head :no_content }
+    end
+  end
+  
+protected
+   
+  def create_title
+    flash[:title] = "Customers"
+  end  
+  
   
 end
