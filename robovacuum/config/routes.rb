@@ -22,7 +22,7 @@ Robovacuum::Application.routes.draw do
   
   get "admin" => "admin/products#index"
   namespace :admin do 
-    resources :products, :provinces, :customers, :abouts
+    resources :products, :orders, :provinces, :customers, :abouts
   end
 
   # The priority is based upon order of creation:

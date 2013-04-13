@@ -24,34 +24,14 @@ class Admin::CustomersController < ApplicationController
   end
 
 
-  def new
-    @customer = Customer.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @customer }
-    end
-  end
 
   # GET /customers/1/edit
   def edit
     @customer = Customer.find(params[:id])
+    @provinces = Province.order(:name)
   end
 
 
-  def create
-    @customer = Customer.new(params[:customer])
-
-    respond_to do |format|
-      if @customer.save
-        format.html { redirect_to admin_customer_path(@customer), notice: 'Customer was successfully created.' }
-        format.json { render json: @customer, status: :created, location: @customer }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
 
   def update

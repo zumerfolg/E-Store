@@ -1,31 +1,38 @@
-<h1>Listing orders</h1>
-
 <table>
   <tr>
+    <th>Order</th>
     <th>Status</th>
-    <th>Pst rate</th>
-    <th>Gst rate</th>
-    <th>Hst rate</th>
+    <th>Date</th>
     <th>Customer</th>
-    <th></th>
-    <th></th>
+    <th>Total</th>
     <th></th>
   </tr>
 
 <% @orders.each do |order| %>
+<%
+   subtotal = 0
+      
+   lineitems = order.lineitems
+   lineitems.each do |item|
+     subtotal += item.quantity * item.price
+   end
+   
+   tax = (subtotal * order.pst_rate + subtotal * order.gst_rate + subtotal * order.hst_rate).round(2)
+   total = subtotal + tax
+   
+   
+%>  
   <tr>
+    <td><%= order.id %></td>
     <td><%= order.status %></td>
-    <td><%= order.pst_rate %></td>
-    <td><%= order.gst_rate %></td>
-    <td><%= order.hst_rate %></td>
-    <td><%= order.customer_id %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+    <td><%= order.customer.first_name + " " + order.customer.last_name%></td>
+    <td style="text-align: right"><%= number_to_currency(total, :precision => 2) %></td>
+    <td>
+        <%= link_to 'Show', admin_order_path(order) %>
+        <%= link_to 'Edit', edit_admin_order_path(order) %>
+        <%= link_to 'Destroy', admin_order_path(order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Order', new_order_path %>
