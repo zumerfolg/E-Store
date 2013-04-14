@@ -18,6 +18,7 @@ class Admin::OrdersController < ApplicationController
   # GET /abouts/1.json
   def show
     @order = Order.find(params[:id])
+    @customer = @order.customer
 
     respond_to do |format|
       format.html # show.html.erb

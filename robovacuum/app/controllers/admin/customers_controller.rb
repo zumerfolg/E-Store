@@ -2,7 +2,7 @@ class Admin::CustomersController < ApplicationController
   
   layout "admin"
   
-  after_filter :create_title,:except => [:index]
+  after_filter :create_title,:except => [:index, :show]
 
   def index
     @customers = Customer.all
@@ -18,7 +18,7 @@ class Admin::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {create_title}# show.html.erb
       format.json { render json: @customer }
     end
   end

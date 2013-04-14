@@ -15,10 +15,10 @@ Robovacuum::Application.routes.draw do
   match "new_order" => "orders#new", :via => :get, :as => "new_order"
   match "create_order" => "orders#create", :via => :post, :as => "create_order"
   match "show_order" => "orders#show", :via => :get, :as => "show_order"
+
   
   resources :products
   resources :customers
-  resources :abouts
   
   get "admin" => "admin/products#index"
   namespace :admin do 

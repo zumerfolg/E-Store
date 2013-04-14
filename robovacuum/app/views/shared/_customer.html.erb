@@ -1,0 +1,27 @@
+<div class="panel">
+ <h3>Customer</h3>
+ <div class="panel_contents">
+   <table>
+     <thead>
+       <tr>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Email</th>
+         <th>City</th>
+         <th>Postal Code</th>
+         <th>Province</th>         
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td><%= @customer.first_name %></td>
+         <td><%= @customer.last_name %></td>
+         <td><%= @customer.email %></td>
+         <td><%= @customer.city %></td>
+         <td><%= @customer.postal_code %></td>
+         <td><%= @customer.province.name %></td>
+       </tr>
+     </tbody>
+   </table>
+  </div> 
+</div>
