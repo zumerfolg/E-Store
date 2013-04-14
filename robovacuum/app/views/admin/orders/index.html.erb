@@ -30,7 +30,6 @@
     <td style="text-align: right"><%= number_to_currency(total, :precision => 2) %></td>
     <td>
         <%= link_to 'Show', admin_order_path(order) %>
-        <%= link_to 'Edit', edit_admin_order_path(order) %>
         <%= link_to 'Destroy', admin_order_path(order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
