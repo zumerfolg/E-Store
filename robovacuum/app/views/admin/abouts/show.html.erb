@@ -1,17 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="new">
+<%= link_to 'List', admin_abouts_path %>
+</div>
+<div class="clear"></div>
+<br/>
 
-<p>
-  <b>Profile:</b>
-  <%= raw @admin_about.profile %>
-</p>
+<table>
+  <tr>
+    <th>Profile</th>
+  </tr>
+  <tr>
+    <td><%= raw @admin_about.profile %></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <th>Vision</th>
+  </tr>
+  <tr>
+    <td><%= raw @admin_about.vision %></td>
+  </tr>
+</table>
 
-<p>
-  <b>Vision:</b>
-  <%= raw @admin_about.vision %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= raw @admin_about.location %>
-</p>
-
+<table>
+  <tr>
+    <th>Location</th>    
+  </tr>
+  <tr>
+    <td><%= raw @admin_about.location %></td>    
+  </tr>
+</table>

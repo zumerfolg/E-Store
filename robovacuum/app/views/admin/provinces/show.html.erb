@@ -1,25 +1,31 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @admin_province.name %>
-</p>
-
-<p>
-  <b>Pst:</b>
-  <%= @admin_province.pst %>
-</p>
-
-<p>
-  <b>Gst:</b>
-  <%= @admin_province.gst %>
-</p>
-
-<p>
-  <b>Hst:</b>
-  <%= @admin_province.hst %>
-</p>
+<div class="new">
+<%= link_to 'List', admin_provinces_path %>
+</div>
+<div class="clear"></div>
 
 
-<%= link_to 'Edit', edit_admin_province_path(@admin_province) %> |
-<%= link_to 'Back', admin_provinces_path %>
+<br/>
+<div class="panel">
+ <h3>Product</h3>
+ <div class="panel_contents">
+   <table>
+     <thead>
+       <tr>
+         <th>Name</th>
+         <th>PST</th>
+         <th>GST</th>
+         <th>HST</th>         
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td><%= @admin_province.name%></td>
+         <td><%= @admin_province.pst.round(2) %></td>
+         <td><%= @admin_province.gst.round(2) %></td>
+         <td><%= @admin_province.hst.round(2) %></td>
+       </tr>
+     </tbody>
+   </table>
+  </div> 
+</div>

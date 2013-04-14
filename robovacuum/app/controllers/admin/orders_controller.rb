@@ -10,40 +10,40 @@ class Admin::OrdersController < ApplicationController
 
     respond_to do |format|
       format.html {create_title}# index.html.erb
-      format.json { render json: @abouts }
+      format.json { render json: @orders }
     end
   end
 
   # GET /abouts/1
   # GET /abouts/1.json
   def show
-    @about = About.find(1)
+    @order = Order.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @about }
+      format.json { render json: @order }
     end
   end
 
 
   # GET /abouts/1/edit
   def edit
-    @about = About.find(params[:id])
+    @order = Order.find(params[:id])
   end
 
 
   # PUT /abouts/1
   # PUT /abouts/1.json
   def update
-    @about = About.find(params[:id])
+    @order = Order.find(params[:id])
 
     respond_to do |format|
-      if @about.update_attributes(params[:about])
-        format.html { redirect_to @about, notice: 'About was successfully updated.' }
+      if @order.update_attributes(params[:about])
+        format.html { redirect_to admin_order_path(@order), notice: 'Order was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @about.errors, status: :unprocessable_entity }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -51,11 +51,11 @@ class Admin::OrdersController < ApplicationController
   # DELETE /abouts/1
   # DELETE /abouts/1.json
   def destroy
-    @about = About.find(params[:id])
-    @about.destroy
+    @order = Order.find(params[:id])
+    @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to abouts_url }
+      format.html { redirect_to admin_orders_path }
       format.json { head :no_content }
     end
   end  

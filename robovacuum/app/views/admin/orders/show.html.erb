@@ -1,38 +1,63 @@
- <%=form_tag(create_order_path, :method => :post, :id => 'order_form') do %>
-  <div class="title_container">
-     <h1 class="title">Order Information</h1>
-     <div>&nbsp;</div>
-  </div>
-  <div class="clear"></div>
-  
-  <table>
-    <thead>
+<div class="new">
+<%= link_to 'List', admin_orders_path %>
+</div>
+<div class="clear"></div>
+<br/>
+<div class="panel">
+ <h3>Invoice</h3>
+ <div class="panel_contents">
+   <table>
+     <thead>
+       <tr>
+         <th>Product</th>
+         <th>Price</th>
+         <th>Quantity</th>
+         <th>SubTotal</th>
+       </tr>
+     </thead>
+     <tbody>
+      <%
+         subtotal = 0
+         total = 0
+         
+         line_items = @order.lineitems
+         line_items.each do |item|
+         
+          subtotal = item.quantity * item.price
+          total += subtotal
+          
+          product = item.product
+         
+      %>
+       <tr>
+         <td><%= product.name %></td>
+         <td style="text-align: right;"><%= number_to_currency(item.price, :precision => 2) %></td>
+         <td style="text-align: right;"><%= item.quantity %></td>
+         <td style="text-align: right;"><%= number_to_currency(subtotal, :precision => 2) %></td>
+       </tr>
+     <%
+         end
+         
+         tax = (total * @order.pst_rate + total * @order.gst_rate + total * @order.hst_rate)
+         total = total + tax
+         
+     %>        
+     </tbody>
+     <tbody>
       <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Province</th>
-        <th>city</th>
-        <th>Postal Code</th>
+       <td colspan="3"></td>
+       <td></td>
       </tr>
-    </thead>
-    <tbody>
       <tr>
-        <td><%=@customer.first_name + " " + @customer.last_name%></td>
-        <td><%=@customer.email%></td>
-        <td><%=@customer.province.name%></td>
-        <td><%=@customer.city%></td>
-        <td><%=@customer.postal_code%></td>        
-      </tr>
-    </tbody>
-  </table>
-  
-  
- <%= render :partial => "shared/cart", :object => [@product_hash], :locals =>{:after_tax => true} %>
- 
-     <div class="title_container">
-      <h1>&nbsp;</h1>
-     <div>&nbsp;</div>
-  </div>
-  <div class="clear"></div>
-<% end %>
+       <td style="text-align: right;" colspan="3">Tax:</td>
+       <td style="text-align: right;"><%= number_to_currency(tax, :precision => 2) %></td>
+     </tr>
+      <tr>
+       <td style="text-align: right;" colspan="3">Total:</td>
+       <td style="text-align: right;"><%= number_to_currency(total, :precision => 2) %></td>
+     </tr>
+   </tbody>
+   </table>
+  </div> 
+</div>
 

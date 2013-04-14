@@ -11,35 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :postal_code %><br />
-    <%= f.text_field :postal_code %>
-  </div>
-  <div class="field">
-    <%= f.label :province_id %><br />
-    <%= f.collection_select :province_id, @provinces, :id, :name  %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br/>
+   
+  <fieldset class="inputs">
+    <ol>
+      <li>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </li>
+      <li>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
+      </li>
+      <li>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </li>
+      <li>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </li>
+      <li>
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+      </li>
+      <li>
+        <%= f.label :postal_code %>
+        <%= f.text_field :postal_code %>
+      </li>
+      <li>
+        <%= f.label :province_id %>
+        <%= f.collection_select :province_id, @provinces, :id, :name  %>
+      </li>       
+    </ol>
+  </fieldset>
+  
+  <%= f.submit %>  
+  
 <% end %>
